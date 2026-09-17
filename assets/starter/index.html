@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Atlas Observatory · Quiet UI specimen</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav aria-label="Main"><a href="#overview">overview</a><a href="#metrics">metrics</a><a href="#about">about</a></nav>
+    <div class="header-status"><span class="micro">DATA SOURCE</span><strong class="mono">fixed demo dataset</strong></div>
+    <button id="theme" class="icon" aria-label="Switch to light theme" title="Toggle theme">◐</button>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="overview" aria-label="Run overview">
+      <div class="panel notices"><h1>notices <span class="muted regular">/ specimen 01</span></h1><div class="notice"><span class="mono muted">demo</span><span>Two fictional runs. Every value is a fixed example; this page is not connected to a training service.</span></div><div class="notice"><span class="mono muted">interaction</span><span>Compare curves, filter metrics, change axes, and open a chart title to inspect its raw observations.</span></div></div>
+      <div id="runs"></div>
+    </section>
+    <section id="workspace" aria-label="Metric explorer">
+      <div class="toolbar">
+        <label class="search"><span class="sr-only">Filter metrics</span><input id="query" type="search" placeholder="filter tags (substring or /regex/)" autocomplete="off"></label>
+        <div class="segment" role="group" aria-label="Horizontal axis"><button data-axis="step" aria-pressed="true">step</button><button data-axis="time" aria-pressed="false">time</button></div>
+        <div class="segment" role="group" aria-label="Vertical scale"><button data-scale="linear" aria-pressed="true">linear</button><button data-scale="log" aria-pressed="false">log</button></div>
+        <label class="smoothing">smoothing <input id="smooth" type="range" min="0" max="90" step="10" value="0"><output id="smooth-label">off</output></label>
+        <div class="legend"><span><i class="dot a"></i>atlas-pro</span><span><i class="dot b"></i>atlas-flash</span></div>
+      </div>
+      <div id="explorer" class="explorer">
+        <aside id="tree" aria-label="Metric categories"></aside>
+        <div class="metric-main"><div id="crumb" class="crumb mono"></div><p id="filter-status" role="status" class="muted"></p><div id="charts" class="chart-grid"></div></div>
+      </div>
+    </section>
+    <section id="about" hidden><h1>about</h1><p>A quiet instrument for understanding a running system.</p><p>This original specimen accompanies the <strong>quiet-observatory-ui</strong> skill. Its visual structure is informed by <a href="https://mimo.xiaomi.com/rl/">Xiaomi MiMo RL</a>; all names and data here are fictional.</p><p>Read the skill for design tokens, source observations, interaction contracts, and acceptance criteria.</p></section>
+  </main>
+  <footer><span>atlas observatory</span><span class="mono">DEMO / no live connection</span><span>Clarity through restraint.</span></footer>
+  <dialog id="detail" aria-labelledby="detail-title"><div class="detail-top"><div><h2 id="detail-title" class="mono"></h2><p id="detail-description" class="muted"></p></div><button id="close-detail" class="icon" aria-label="Close chart">×</button></div><div id="detail-stats"></div><div id="detail-chart"></div><details><summary>Raw observations / accessible data table</summary><div id="detail-table" class="table-wrap"></div></details></dialog>
+</body>
+</html>

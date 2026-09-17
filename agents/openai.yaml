@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quiet Observatory UI"
+  short_description: "Build precise, compact scientific dashboard interfaces"
+  default_prompt: "Use $quiet-observatory-ui to build a compact, polished dashboard for my product, preserving its real data and workflows."
